@@ -1,5 +1,5 @@
 import { Floor, IFloor } from './Floor.js';
-import { Building } from './Building.js';
+import { Building, IBuilding } from './Building.js';
 import { Elevator, IElevator } from './Elevator.js';
 
 type RequestElevatorFn = (
@@ -49,7 +49,10 @@ export class ElevatorFactory {
 }
 
 export class BuildingFactory {
-  static createBuilding(numFloors: number, numElevators: number): Building {
+  static createBuilding(numFloors: number, numElevators: number, type: string = "default"): IBuilding {
+    if (type !== "default"){
+      //return something else
+    }
     return new Building(numFloors, numElevators);
   }
 }

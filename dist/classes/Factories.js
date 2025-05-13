@@ -40,7 +40,10 @@ export class ElevatorFactory {
     }
 }
 export class BuildingFactory {
-    static createBuilding(numFloors, numElevators) {
+    static createBuilding(numFloors, numElevators, type = "default") {
+        if (type !== "default") {
+            //return something else
+        }
         return new Building(numFloors, numElevators);
     }
 }

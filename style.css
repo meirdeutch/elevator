@@ -1,22 +1,97 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
 
-body {
+body.body-form-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.body-simulation-mode {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
-    margin: 0;
-    padding: 0;
     height: 100vh;
+    background-color: #e0e0e0;
 }
 
+#buildings-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+}
+
+.building-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.building-group:hover {
+    transform: scale(1.01);
+}
+
+.building-group label {
+    font-weight: 600;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
+.building-group input {
+    width: 80px;
+    padding: 6px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.building-group button {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.building-group button:hover {
+    background-color: #c82333;
+}
+
+#add-building-btn,
+#submit-btn {
+    margin: 20px 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#add-building-btn:hover,
+#submit-btn:hover {
+    background-color: #0b5ed7;
+}
+
+
 .building-container {
-    position: relative; 
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -58,6 +133,7 @@ body {
     background-size: 58px 58px;
     background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
 }
+
 .top-black-strip {
     height: 10px;
     width: 100%;
@@ -65,18 +141,21 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-  }
-.timer{
+}
+
+.timer {
     background-color: #ddd;
     font-size: 50px;
     padding: 5px 10px;
     display: none;
     border-radius: 5px;
-} 
-.floors-container{
+}
+
+.floors-container {
     display: flex;
     flex-direction: column;
-} 
+}
+
 .metal {
     position: relative;
     margin: 5px auto;

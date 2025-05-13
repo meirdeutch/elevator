@@ -1,7 +1,10 @@
 import { ElevatorFactory, FloorFactory } from './Factories.js';
 import { ELEVATOR_WIDTH_PX, FLOOR_WIDTH_PX } from '../constants.js';
-export class Building {
+export class IBuilding {
+}
+export class Building extends IBuilding {
     constructor(numFloors, numElevators) {
+        super();
         this.elevators = [];
         this.floors = [];
         this.numFloors = numFloors;

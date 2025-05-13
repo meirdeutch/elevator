@@ -3,7 +3,15 @@ import { Floor, IFloor } from './Floor.js';
 import { ElevatorFactory, FloorFactory } from './Factories.js';
 import { ELEVATOR_WIDTH_PX, FLOOR_WIDTH_PX } from '../constants.js';
 
-export class Building {
+export abstract class IBuilding {
+  abstract elevators: IElevator[];
+  abstract floors: IFloor[];
+  abstract numFloors: number;
+  abstract numElevators: number;
+  abstract buildingContainer: HTMLElement;
+  abstract floorsContainer: HTMLElement;
+}
+export class Building extends IBuilding{
   elevators: IElevator[];
   floors: IFloor[];
   numFloors: number;
@@ -12,6 +20,7 @@ export class Building {
   floorsContainer: HTMLElement;
 
   constructor(numFloors: number, numElevators: number) {
+    super();
     this.elevators = [];
     this.floors = [];
     this.numFloors = numFloors;
