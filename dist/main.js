@@ -1,5 +1,3 @@
-// const building1 = BuildingFactory.createBuilding(20, 4);
-// const building2 = BuildingFactory.createBuilding(20, 7);
 import { BuildingFactory } from './classes/Factories.js';
 let buildingCount = 0;
 function addBuildingFields() {
@@ -48,7 +46,7 @@ function submitData() {
     }
     document.body.classList.remove('body-form-mode');
     document.body.classList.add('body-simulation-mode');
-    container === null || container === void 0 ? void 0 : container.remove(); // מוחק את כל קבוצות הבניינים
+    container === null || container === void 0 ? void 0 : container.remove();
     (_a = document.getElementById("header")) === null || _a === void 0 ? void 0 : _a.remove();
     (_b = document.getElementById('add-building-btn')) === null || _b === void 0 ? void 0 : _b.remove();
     (_c = document.getElementById('submit-btn')) === null || _c === void 0 ? void 0 : _c.remove();
@@ -56,7 +54,6 @@ function submitData() {
         BuildingFactory.createBuilding(b.floors, b.elevators);
     }
 }
-// כברירת מחדל בניין אחד
 window.addEventListener('DOMContentLoaded', () => {
     var _a, _b;
     addBuildingFields();
