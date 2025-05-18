@@ -61,10 +61,7 @@ export class Floor extends IFloor {
             clearInterval(this.countdownInterval);
         this.countdownInterval = window.setInterval(() => {
             remaining--;
-            if (remaining < 2) {
-                this.timerDisplay.textContent = "^";
-            }
-            if (remaining < 0) {
+            if (remaining <= 0) {
                 clearInterval(this.countdownInterval);
             }
             else {
